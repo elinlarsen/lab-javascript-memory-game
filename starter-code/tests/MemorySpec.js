@@ -92,7 +92,7 @@ describe('checkIfPair method', function () {
     expect(memoryGame.checkIfPair('ironman','ironman')).toBe(true);
   });
 
-  it('It should return false when the comparing cards are the same', function () {
+  it('It should return false when the comparing cards are not the same', function () {
     expect(memoryGame.checkIfPair('ironman','flash')).toBe(false);
   });
 
@@ -102,7 +102,7 @@ describe('checkIfPair method', function () {
     expect(memoryGame.pairsGuessed).toBe(1);
   });
 
-  it('It should not add anything to pairsGuessed if the not the same card', function () {
+  it('It should not add anything to pairsGuessed if the cards are not the same', function () {
     memoryGame.pairsGuessed = 0;
     memoryGame.checkIfPair('ironman','green lantern')
     expect(memoryGame.pairsGuessed).toBe(0);
@@ -124,7 +124,7 @@ describe('isFinished method', function () {
   });
 
   it('It should return true if all pairs were guessed', function () {
-    memoryGame.pairsGuessed = 8;
+    memoryGame.pairsGuessed = 12;
     expect(memoryGame.isFinished()).toBe(true);
   });
 
