@@ -32,7 +32,7 @@ class MemoryGame {
     }
     
     isFinished() {
-      let nbPairs=cards.length/2;
+      let nbPairs=this.cards.length/2;
       var res=false
       if (this.pairsGuessed==nbPairs){res= true}
       else {res=false}
